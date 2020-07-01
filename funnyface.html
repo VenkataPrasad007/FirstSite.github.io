@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: teal;
+            }
+            .face{
+                position: absolute;
+                top: 10%;
+                left: 30%;
+                width: 600px;
+                height: 600px;
+                border-radius: 50%;
+                background-color: rgb(150, 150, 32);
+            }
+            .eyes{
+                position: absolute;
+                
+            }
+            .eye{
+                position: relative;
+                width:150px;
+                height: 100px;
+                margin: 150px 0 0 100px;
+                background-color: azure;
+                border-radius: 100%;
+                overflow: hidden;
+                display: inline-block;
+            }
+            .ball{
+                position: absolute;
+                top: 50px;
+                left: 60px;
+                width: 50px;
+                height: 50px;
+            
+                background-color: black;
+                border-radius: 50%;
+                transform: translate(-50%,-50%);
+            }
+            .mouth{
+                position: absolute;
+                top: 360px;
+                left: 120px;
+                width: 360px;
+                height: 60px; 
+                
+                background: burlywood;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            transition: all 1s;
+            }
+            .face:hover .mouth{
+                position: absolute;
+                top: 360px;
+                left: 180px;
+                width: 250px;
+                height: 120px; 
+                
+                background: beige;
+                
+                border-bottom-left-radius: 100%;
+                border-bottom-right-radius: 100%;
+                transition: all 1s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="face">
+            <div class="eyes">
+                <div class="eye">
+                    <div class="ball"></div>
+                </div>
+                <div class="eye">
+                    <div class="ball"></div>
+                </div>
+            </div>
+            <div class="mouth"></div>
+        </div>
+
+        <script>
+            var ball = document.getElementsByClassName("ball");
+            document.onmousemove = function(event){
+                
+                var x = event.clientX * 100 / window.innerWidth + "%";
+                var y = event.clientY * 100 / window.innerHeight + "%";
+
+                for(var i=0;i<2;i++){
+                    ball[i].style.left = x;
+                    ball[i].style.top = y;
+                   
+                    
+
+                }
+                
+            }
+        </script>
+    </body>
+</html>
