@@ -1,30 +1,71 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<style>
-body{
-position: absolute;
-left: 40%;
-top: 30%;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(51, 102, 153);
-}
-
-.new{
-color: red,
-
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css" />
+    <script src="./script1.js"></script>
+    <title>SKML Dhaba</title>
 </head>
 <body>
-<div>
-<h2 style="color:red"><i>Hello Everyone</i></h2>
+    <div class="head">
+        <div>
+            <strong class="logo-name">SKML Dhaba and Restaurant</strong>
+        </div>
+    </div>
+    <div class="img-section">
+        <div class="div-logo">
+            <img src="./logo.jpg" class="logo-img"/>
+        </div>
+    <div class="div-slide">
+        <img src="./food1.jpg" class="img-slide"/>
+        <img src="./food2.jpg" class="img-slide"/>
+        <img src="./food3.jpg" class="img-slide"/>
+    </div>
+    <div class="food-details">
+        <div class="food-data">
+            <strong>Biryanis:</strong>
+            <li>Chicken Dum Biryani</li>
+            <li>Chicken Fry Piece Biryani</li>
+            <li>Mutton Biryani</li>
+            <li>Prawns Biryani</li>
+        </div>
+        <div class="food-data">
+            <strong>Starters</strong>
+            <li>Chicken 65</li>
+            <li>Chicken Lollypop</li>
+            <li>Chilli Chicken</li>
+            <li>Fried Checken</li>
+        </div>
+        <div class="food-data">
+            <strong>Curries</strong>
+            <li>Chicken Mogalai</li>
+            <li>Chicken Curry</li>
+            <li>Muuton Kurma</li>
+            <li>Fish Pulusu</li>
+        </div>
+    </div>
 </div>
-<div>
-<h2 style="color:grey">Welcome to my website</h4></br>
-</div>
-<div>
-<h4 style="color:gold;size:25px;">You can find interesting things <a href="home.html">here</a></h4>
-</div>
+    <script>
+        var myIndex=0;
+ ShowSlides();
+ function ShowSlides(){
+     var i;
+     
+    var slide = document.getElementsByClassName("img-slide");
+    var food = document.getElementsByClassName("food-data");
+    for (i = 0; i < slide.length; i++) {
+        slide[i].style.display = "none";  
+        food[i].style.display = "none"; 
+      }
+      myIndex++;
+      if (myIndex > slide.length) 
+      {myIndex = 1}  
+      //console.log(myIndex);  
+      slide[myIndex-1].style.display = "block";  
+      food[myIndex-1].style.display = "block";  
+       setTimeout(ShowSlides, 3000);
+}
+    </script>
 </body>
 </html>
