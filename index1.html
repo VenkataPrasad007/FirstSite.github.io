@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style1.css" />
+    <title>Sidhi Vinayaka</title>
+</head>
+<body>
+    <div class="head">
+        <div>
+            <strong class="logo-name">Sri Sidhi Vinayaka Youth</strong>
+        </div>
+    </div>
+    <div class="img-section">
+        <div class="div-logo">
+            <img src="./Image3.jpg" class="logo-img"/>
+        </div>
+    <div class="div-slide">
+        <img src="./Image1.jpg" class="img-slide"/>
+        <img src="./Image2.jpg" class="img-slide"/>
+    </div>
+    
+</div>
+    <script>
+        var myIndex=0;
+ ShowSlides();
+ function ShowSlides(){
+     var i;
+     
+    var slide = document.getElementsByClassName("img-slide");
+    var food = document.getElementsByClassName("food-data");
+    for (i = 0; i < slide.length; i++) {
+        slide[i].style.display = "none";  
+        food[i].style.display = "none"; 
+      }
+      myIndex++;
+      if (myIndex > slide.length) 
+      {myIndex = 1}  
+      //console.log(myIndex);  
+      slide[myIndex-1].style.display = "block";  
+      food[myIndex-1].style.display = "block";  
+       setTimeout(ShowSlides, 3000);
+}
+    </script>
+</body>
+</html>
